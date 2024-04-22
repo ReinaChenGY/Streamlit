@@ -8,6 +8,8 @@ Original file is located at
 """
 import webbrowser
 import streamlit as st
+st.set_page_config(layout="wide")  # Set the layout to wide mode
+
 
 # Sidebar
 with st.sidebar:

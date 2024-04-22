@@ -90,6 +90,10 @@ with st.container():
                                   </form>"""
                 st.markdown(button_html, unsafe_allow_html=True)
 
+        # Add a space after each row of projects except the last
+        if idx + 3 < len(projects):
+            st.write("")  # This adds an empty line for spacing
+
 
                 
 # Skills section

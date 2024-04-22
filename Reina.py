@@ -12,14 +12,31 @@ st.set_page_config(layout="wide")  # Set the layout to wide mode
 
 
 # Sidebar
+# Define the URLs for email and LinkedIn
+email_url = "mailto:reinachen.gy@outlook.com"
+linkedin_url = "https://www.linkedin.com/in/reina-gy-chen/"
+
+# HTML button code for email
+email_button_html = f"""<form action="{email_url}" method="get" target="_blank">
+                        <input type="submit" value="Connect via email" style="color: black; background-color: white; 
+                        border: 1px solid #cccccc; padding: 3px 13px; text-align: center; display: inline-block; 
+                        font-size: 16px; margin: 2px 2px; cursor: pointer; border-radius: 7px; width: 140px; height: 35px;">
+                      </form>"""
+
+# HTML button code for LinkedIn
+linkedin_button_html = f"""<form action="{linkedin_url}" method="get" target="_blank">
+                           <input type="submit" value="Visit LinkedIn!" style="color: black; background-color: white; 
+                           border: 1px solid #cccccc; padding: 3px 13px; text-align: center; display: inline-block; 
+                           font-size: 16px; margin: 2px 2px; cursor: pointer; border-radius: 7px; width: 140px; height: 35px;">
+                         </form>"""
+
 with st.sidebar:
     st.header('Hello! This is Reina')
-    st.image('https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/Reina.jpg', width=200)  # Adjust the path to your image
+    st.image('https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/Reina.jpg', width=200)
     st.write('Wish to connect?')
-    if st.button('Connect via email'):
-        webbrowser.open_new_tab('mailto:reinachen.gy@outlook.com')
-    if st.button('Visit LinkedIn!'):
-        webbrowser.open_new_tab('https://www.linkedin.com/in/reina-gy-chen/')
+    st.markdown(email_button_html, unsafe_allow_html=True)
+    st.markdown(linkedin_button_html, unsafe_allow_html=True)
+
 
 # Main content area
 with st.container():

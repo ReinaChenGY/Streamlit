@@ -7,15 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1FmvCZN14BGmqe8B99a5qHEvY0n4NR3lD
 """
 
-import streamlit as st
 import webbrowser
+import streamlit as st
 
-# Set page config to widen the page and set a title and icon
-st.set_page_config(page_title='Reina Portfolio', layout='wide')
-
+# Sidebar
 with st.sidebar:
     st.header('Hello! This is Reina')
-    st.image('/Users/mac/Desktop/photo/Reina.jpg', width=200)  # Adjust the path to your image
+    st.image('https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/Reina.jpg', width=200)  # Adjust the path to your image
     st.write('Wish to connect?')
     if st.button('Connect via email'):
         import webbrowser
@@ -24,6 +22,7 @@ with st.sidebar:
         import webbrowser
         webbrowser.open_new_tab('https://www.linkedin.com/in/reina-gy-chen/')
 
+# Work Project
 with st.container():
     st.title("Reina's Portfolio")
     st.write("Enjoy exploring user needs and data insights to develop solutions that enhance user experience and business performance")
@@ -32,6 +31,7 @@ with st.container():
     st.subheader('Summary')
     st.write('''4+ years of professional experience at PwC and Blackmores, specializing in tech product solutions for e-commerce, retail, healthcare, and manufacturing industries. Adept in transforming complex business requirements and large datasets into actionable insights, product roadmaps, user-centric features, and interactive dashboards''')
 
+# Work Project
 with st.container():
     st.subheader('Work Project')
     # Define clients, deliveries, and images
@@ -57,13 +57,9 @@ with st.container():
     cols = st.columns(3)
     for col, client, delivery, image in zip(cols, clients[:3], deliveries[:3], images[:3]):
         with col:
-            try:
-                image_path = f'/Users/mac/Desktop/photo/{image}'
-                st.image(image_path, use_column_width=True)
-                col.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
-                col.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
-            except Exception as e:
-                st.error(f"Failed to load {image}. Error: {str(e)}")
+            st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{image}', use_column_width=True)
+            st.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 
@@ -72,15 +68,12 @@ with st.container():
     items = zip(clients[3:], deliveries[3:], images[3:])
     for col, (client, delivery, image) in zip(cols, items):
         with col:
-            try:
-                image_path = f'/Users/mac/Desktop/photo/{image}'
-                st.image(image_path, use_column_width=True)
-                col.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
-                col.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
-            except Exception as e:
-                st.error(f"Failed to load {image}. Error: {str(e)}")
+            st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{image}', use_column_width=True)
+            st.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
-    # Academic Projects
+# Academic Projects
+with st.container():
     st.subheader('Academic Project')
     projects = [
         ("Capstone: FED FOMC Confidence Forecast", "Fed.png", "https://github.com/ReinaChenGY/Capstone_FedFomc.git"),
@@ -95,12 +88,14 @@ with st.container():
         cols = st.columns(3)
         for col, project in zip(cols, projects[idx:idx+3]):
             with col:
-                st.image(f'/Users/mac/Desktop/photo/{project[1]}', use_column_width=True, output_format='JPEG')
+                st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{project[1]}', use_column_width=True, output_format='JPEG')
                 st.write(project[0])
                 button_key = f'button_{project[0].replace(" ", "_")}'  # Create a unique key for each button
                 if st.button('Check it out!', key=button_key):
                     webbrowser.open(project[2])
+
 # Skills section
+with st.container():
     st.subheader('Skills')
     skills = [
         ("SQL", "green"), ("Python", "darkblue"), ("Power BI", "orange"),
@@ -117,11 +112,8 @@ with st.container():
         for col, (skill, color) in zip(cols, row):
             col.markdown(f"<span style='color:{color};'>{skill}</span>", unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-
 # Footer
+st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 

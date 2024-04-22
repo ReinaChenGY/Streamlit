@@ -81,8 +81,14 @@ with st.container():
             with col:
                 st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{project_img}', use_column_width=True, output_format='JPEG')
                 st.write(project_name)
-                link_html = f'<a href="{project_url}" target="_blank">Check it out!</a>'
-                st.markdown(link_html, unsafe_allow_html=True)
+                # Create a button with JavaScript for redirection
+                button_html = f"""<form action="{project_url}" target="_blank">
+                                  <input type="submit" value="Check it out!" style="color: black; background-color: #FF4B4B; 
+                                  border: none; padding: 10px 20px; text-align: center; display: inline-block; font-size: 16px; 
+                                  margin: 4px 2px; cursor: pointer; border-radius: 12px;">
+                                  </form>"""
+                st.markdown(button_html, unsafe_allow_html=True)
+
                 
 # Skills section
 with st.container():

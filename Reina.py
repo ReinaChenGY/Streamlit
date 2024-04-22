@@ -82,14 +82,13 @@ with st.container():
                 st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{project_img}', use_column_width=True, output_format='JPEG')
                 st.write(project_name)
                 # Create a button with Streamlit-like styling
-                # Create a button with Streamlit-like styling for white background and rounded corners
+                # Create a button with adjusted height
                 button_html = f"""<form action="{project_url}" target="_blank">
                                   <input type="submit" value="Check it out!" style="color: black; background-color: white; 
-                                  border: 1px solid #cccccc; padding: 8px 16px; text-align: center; display: inline-block; font-size: 16px; 
+                                  border: 1px solid #cccccc; padding: 4px 16px; text-align: center; display: inline-block; font-size: 16px; 
                                   margin: 4px 2px; cursor: pointer; border-radius: 8px;">
                                   </form>"""
                 st.markdown(button_html, unsafe_allow_html=True)
-
 
 
                 

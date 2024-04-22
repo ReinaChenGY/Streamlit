@@ -97,6 +97,7 @@ with st.container():
 
                 
 # Skills section
+st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 with st.container():
     st.subheader('Skills')
     skills = [
@@ -115,9 +116,11 @@ with st.container():
             col.markdown(f"<span style='color:{color};'>{skill}</span>", unsafe_allow_html=True)
 
 # Footer
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
+# Calculate remaining space to push footer down
+spacer_height = 1  # Start with a minimal spacer height
+st.markdown(f"<div style='height: {spacer_height}rem;'></div>", unsafe_allow_html=True)
 
+# Footer
+st.markdown('---')  # Optional: add a horizontal line for better separation
 st.write('© 2024 Reina. All Rights Reserved.')
 

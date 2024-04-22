@@ -22,8 +22,8 @@ with st.sidebar:
         import webbrowser
         webbrowser.open_new_tab('https://www.linkedin.com/in/reina-gy-chen/')
 
-# Main content area
-with st.expander():
+# Work Project
+with st.container():
     st.title("Reina's Portfolio")
     st.write("Enjoy exploring user needs and data insights to develop solutions that enhance user experience and business performance")
 
@@ -32,7 +32,7 @@ with st.expander():
     st.write('''4+ years of professional experience at PwC and Blackmores, specializing in tech product solutions for e-commerce, retail, healthcare, and manufacturing industries. Adept in transforming complex business requirements and large datasets into actionable insights, product roadmaps, user-centric features, and interactive dashboards''')
 
 # Work Project
-with st.expander():
+with st.container():
     st.subheader('Work Project')
     # Define clients, deliveries, and images
     clients = [
@@ -73,7 +73,7 @@ with st.expander():
             st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
 # Academic Projects
-with st.expander():
+with st.container():
     st.subheader('Academic Project')
     projects = [
         ("Capstone: FED FOMC Confidence Forecast", "Fed.png", "https://github.com/ReinaChenGY/Capstone_FedFomc.git"),
@@ -95,7 +95,7 @@ with st.expander():
                     webbrowser.open(project[2])
 
 # Skills section
-with st.expander():
+with st.container():
     st.subheader('Skills')
     skills = [
         ("SQL", "green"), ("Python", "darkblue"), ("Power BI", "orange"),

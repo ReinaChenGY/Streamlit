@@ -15,14 +15,12 @@ with st.sidebar:
     st.image('https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/Reina.jpg', width=200)  # Adjust the path to your image
     st.write('Wish to connect?')
     if st.button('Connect via email'):
-        import webbrowser
         webbrowser.open_new_tab('mailto:reinachen.gy@outlook.com')
     if st.button('Visit LinkedIn!'):
-        import webbrowser
         webbrowser.open_new_tab('https://www.linkedin.com/in/reina-gy-chen/')
 
 # Main content area
-with st.beta_container(wide_mode=True):
+with st.container():
     st.title("Reina's Portfolio")
     st.write("Enjoy exploring user needs and data insights to develop solutions that enhance user experience and business performance")
 
@@ -31,9 +29,8 @@ with st.beta_container(wide_mode=True):
     st.write('''4+ years of professional experience at PwC and Blackmores, specializing in tech product solutions for e-commerce, retail, healthcare, and manufacturing industries. Adept in transforming complex business requirements and large datasets into actionable insights, product roadmaps, user-centric features, and interactive dashboards''')
 
 # Work Project
-with st.beta_container(wide_mode=True):
+with st.container():
     st.subheader('Work Project')
-    # Define clients, deliveries, and images
     clients = [
         "Amazon Electronics Recycler",
         "Top 3 Automobile, Globally",
@@ -51,18 +48,13 @@ with st.beta_container(wide_mode=True):
         "Online-Merge-Offline Strategy and Power BI Implementation"
     ]
     images = ['Amazon.jpg', 'Audi.png', 'Baidu.png', 'Cummins.png', 'Cosco.png', 'MengNiu.jpg']
-
-    # Display the first line with 3 columns
     cols = st.columns(3)
     for col, client, delivery, image in zip(cols, clients[:3], deliveries[:3], images[:3]):
         with col:
             st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{image}', use_column_width=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
-
     st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
-
-    # Display the second line with 3 columns
     cols = st.columns(3)  # Maintain uniform column width by creating three columns again
     items = zip(clients[3:], deliveries[3:], images[3:])
     for col, (client, delivery, image) in zip(cols, items):
@@ -72,7 +64,7 @@ with st.beta_container(wide_mode=True):
             st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
 # Academic Projects
-with st.beta_container(wide_mode=True):
+with st.container():
     st.subheader('Academic Project')
     projects = [
         ("Capstone: FED FOMC Confidence Forecast", "Fed.png", "https://github.com/ReinaChenGY/Capstone_FedFomc.git"),
@@ -81,8 +73,6 @@ with st.beta_container(wide_mode=True):
         ("Real Time Intelligence: Stock Trading Strategy", "RT.png", "https://github.com/ReinaChenGY/RT_PennyStockForecast.git"),
         ("Data Engineering: Hotel Cancellation Analysis", "DE.png", "https://github.com/ReinaChenGY/DE_HotelCancellation.git")
     ]
-
-    # Display projects with 3 projects per row
     for idx in range(0, len(projects), 3):
         cols = st.columns(3)
         for col, project in zip(cols, projects[idx:idx+3]):
@@ -94,7 +84,7 @@ with st.beta_container(wide_mode=True):
                     webbrowser.open(project[2])
 
 # Skills section
-with st.beta_container(wide_mode=True):
+with st.container():
     st.subheader('Skills')
     skills = [
         ("SQL", "green"), ("Python", "darkblue"), ("Power BI", "orange"),
@@ -117,3 +107,4 @@ st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 st.markdown("<br>", unsafe_allow_html=True)  # Adding a space
 
 st.write('© 2024 Reina. All Rights Reserved.')
+

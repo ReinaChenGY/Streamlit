@@ -77,14 +77,13 @@ with st.container():
     ]
     for idx in range(0, len(projects), 3):
         cols = st.columns(3)
-        for col, project in zip(cols, projects[idx:idx+3]):
+        for col, (project_name, project_img, project_url) in zip(cols, projects[idx:idx+3]):
             with col:
-                st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{project[1]}', use_column_width=True, output_format='JPEG')
-                st.write(project[0])
-                button_key = f'button_{project[0].replace(" ", "_")}'  # Create a unique key for each button
-                if st.button('Check it out!', key=button_key):
-                    webbrowser.open(project[2])
-
+                st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{project_img}', use_column_width=True, output_format='JPEG')
+                st.write(project_name)
+                link_html = f'<a href="{project_url}" target="_blank">Check it out!</a>'
+                st.markdown(link_html, unsafe_allow_html=True)
+                
 # Skills section
 with st.container():
     st.subheader('Skills')

@@ -13,7 +13,7 @@ import streamlit as st
 # Sidebar
 with st.sidebar:
     st.header('Hello! This is Reina')
-    st.image('https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/Reina.jpg', width=200)  # Adjust the path to your image
+    st.image('https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/Reina.jpg', width=200)  # Adjust the path to your image
     st.write('Wish to connect?')
     if st.button('Connect via email'):
         import webbrowser
@@ -57,7 +57,7 @@ with st.container():
     cols = st.columns(3)
     for col, client, delivery, image in zip(cols, clients[:3], deliveries[:3], images[:3]):
         with col:
-            st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{image}', use_column_width=True)
+            st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{image}', use_column_width=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
@@ -68,7 +68,7 @@ with st.container():
     items = zip(clients[3:], deliveries[3:], images[3:])
     for col, (client, delivery, image) in zip(cols, items):
         with col:
-            st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{image}', use_column_width=True)
+            st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{image}', use_column_width=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Client:</b> {client}</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='margin-top: 0;'><b>Delivery:</b> {delivery}</p>", unsafe_allow_html=True)
 
@@ -88,7 +88,7 @@ with st.container():
         cols = st.columns(3)
         for col, project in zip(cols, projects[idx:idx+3]):
             with col:
-                st.image(f'https://raw.githubusercontent.com/YourUsername/YourRepositoryName/main/photo/{project[1]}', use_column_width=True, output_format='JPEG')
+                st.image(f'https://raw.githubusercontent.com/ReinaChenGY/Streamlit/main/photo/{project[1]}', use_column_width=True, output_format='JPEG')
                 st.write(project[0])
                 button_key = f'button_{project[0].replace(" ", "_")}'  # Create a unique key for each button
                 if st.button('Check it out!', key=button_key):

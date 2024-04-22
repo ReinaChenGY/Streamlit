@@ -85,7 +85,7 @@ with st.container():
                 # Create a button with specified width and height
                 button_html = f"""<form action="{project_url}" target="_blank">
                                   <input type="submit" value="Check it out!" style="color: black; background-color: white; 
-                                  border: 1px solid #cccccc; padding: 4px 16px; text-align: center; display: inline-block; 
+                                  border: 1px solid #cccccc; padding: 3px 13px; text-align: center; display: inline-block; 
                                   font-size: 16px; margin: 2px 2px; cursor: pointer; border-radius: 7px; width: 140px; height: 33px;">
                                   </form>"""
                 st.markdown(button_html, unsafe_allow_html=True)
